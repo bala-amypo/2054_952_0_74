@@ -8,7 +8,8 @@ import com.example.demo.service.StudentService;
 public class StudentServiceImpl implements StudentService{
     @Override
     public Student poststudent(Student st){
-        
+        return 
+
     }
     
 }
