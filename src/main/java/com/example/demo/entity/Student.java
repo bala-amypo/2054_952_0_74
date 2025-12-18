@@ -1,10 +1,12 @@
 package com.example.demo.entity;
 
 import java.time.LocalDate;
-import jakarta.validation.*;
+
+import jakarta.validation.constarints.*;
 
 import jakarta.persistence.*;
 @Entity
+@Table(name = "students")
 public class Student{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
