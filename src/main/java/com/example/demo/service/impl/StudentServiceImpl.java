@@ -22,5 +22,9 @@ public class StudentServiceImpl implements StudentService {
     public Optional<Student> getById(Long id){
         return stdrepo.findById(id);
     }
-    public String updateData(Long id,)
+    public String updateData(Long id,Student st){
+        boolean status=stdrepo.existById(id);
+        return stdrepo.updateById();
+    }
+
 }
