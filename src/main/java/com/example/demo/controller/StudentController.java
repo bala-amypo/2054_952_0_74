@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.util.List;
 import java.util.Optional;
+import jakarta.cvalues.constraints.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ public class StudentController {
     StudentService stdser;
 
     @PostMapping("/addStudent")
-    public Student addStudent(@RequestBody Student st) {
+    public Student addStudent(@Valid,@RequestBody Student st) {
         return stdser.poststudent(st);
     }
 
@@ -30,7 +31,7 @@ public class StudentController {
         return stdser.getById(id);
     }
     @PutMapping("/update/{id}")
-    public String update(@PathVariable Long id,@RequestBody Student st){
+    public String update(@PathVariable Long id,@Valid @RequestBody Student st){
         return stdser.updateData(id,st);
     }
     @DeleteMapping("/delete/{id}")
