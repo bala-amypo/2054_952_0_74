@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.time.LocalDate;
+import jakarta.validation.*;
 
 import jakarta.persistence.*;
 @Entity
@@ -13,7 +14,7 @@ public class Student{
     private String name;
     @NotBlank(message="enter some values correctly")
     private String dept;
-    @Past("you cannot be that young ")
+    @Past(message="you cannot be that young ")
     private LocalDate dob;
     @Positive(message="i know you are dumb you aint this dumb")
     private float cgpa;
