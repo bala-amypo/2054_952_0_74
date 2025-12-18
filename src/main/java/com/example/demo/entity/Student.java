@@ -7,10 +7,15 @@ import jakarta.persistence.*;
 public class Student{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Positive(message="dont enter negative values")
     private Long id;
+    @NotBlank(message="enter some values correctly")
     private String name;
+    @NotBlank(message="enter some values correctly")
     private String dept;
+    @Past("you cannot be that young ")
     private LocalDate dob;
+    @NotBlank(message="enter some values correctly")
     private float cgpa;
     public Long getId() {
         return id;
