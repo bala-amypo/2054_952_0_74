@@ -15,8 +15,9 @@ public class Student{
     private String dept;
     @Past("you cannot be that young ")
     private LocalDate dob;
-    @NotBlank(message="enter some values correctly")
+    @Positive(message="i know you are dumb you aint this dumb")
     private float cgpa;
+
     public Long getId() {
         return id;
     }
