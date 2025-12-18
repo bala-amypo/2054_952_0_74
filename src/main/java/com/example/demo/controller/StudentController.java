@@ -31,7 +31,7 @@ public class StudentController {
         return stdser.getById(id);
     }
     @PutMapping("/update/{id}")
-    public String update(@PathVariable Long id,@Valid @RequestBody Student st){
+    public String update(@PathVariable Long id,@Valid,@RequestBody Student st){
         return stdser.updateData(id,st);
     }
     @DeleteMapping("/delete/{id}")
