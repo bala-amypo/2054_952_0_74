@@ -32,4 +32,8 @@ public class StudentServiceImpl implements StudentService {
             return "Student witd ID "+id+" not found ";
         }
     }
+    @Override
+    public String deleteData(Long id){
+    
+    }
 }
