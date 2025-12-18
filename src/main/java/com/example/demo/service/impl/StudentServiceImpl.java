@@ -23,8 +23,13 @@ public class StudentServiceImpl implements StudentService {
         return stdrepo.findById(id);
     }
     public String updateData(Long id,Student st){
-        boolean status=stdrepo.existById(id);
-        return stdrepo.updateById();
+        boolean status=stdrepo.existsById(id);
+        if(status){
+            st.setId(id);
+            stdrepo.save(st);
+            return "Student updated successfully";
+        }else{
+            return "Student witd ID "+id+" not found ";
+        }
     }
-
 }
